@@ -14,33 +14,33 @@ We are mainly targeting YouTube creators, operators and advertisers. YouTube sho
 
 ## Directory Structure
 
-```shell
+```
 YoutubeTrendingPrediction/
-	|- YoutubeTrendingPrediction/
-		|- trending_tags.py
-		|- __init__.py
-		|- tests/
-			|- test_trending_tags.py
-			|- __init__.py
-		|- pylintExpo/
-			|- pylint_result.txt
+  |- YoutubeTrendingPrediction/
+    |- trending_tags.py
+    |- __init__.py
+    |- tests/
+      |- test_trending_tags.py
+      |- __init__.py
+    |- pylintExpo/
+      |- pylint_result.txt
   |- examples
-  	|- trending_category.ipynb
-  	|- trending_category.ipynb
+    |- trending_category.ipynb
+    |- trending_category.ipynb
   |- data/
-  	|-US_youtube_trending_data.csv
-  	|-US_category_id.json
-  	|-relatedEntities.csv
-  	|-relatedQueries.csv
+    |-US_youtube_trending_data.csv
+    |-US_category_id.json
+    |-relatedEntities.csv
+    |-relatedQueries.csv
   |- doc/
-  	|- FunctionalSpec.md
-  	|- Componentspec.md
-  	|- InteractionDiagram.png
-  	|- Technology Reviews.pdf
-  	|- ProjectTracking.md
-  	|- ProjectTracking.png
+    |- FunctionalSpec.md
+    |- Componentspec.md
+    |- InteractionDiagram.png
+    |- Technology Reviews.pdf
+    |- ProjectTracking.md
+    |- ProjectTracking.png
   |- logo/
-  	|- ytp_logo.png
+    |- ytp_logo.png
   |- setup.py
   |- LICENSE
   |- README.md
