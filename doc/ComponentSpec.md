@@ -1,8 +1,12 @@
-# Design Specification
+# Component Specification
 
 ## Component Design
 
 *This section lists the components that we expect to have in our project (not necessarily a complete list), what they do, and how they interface (e.g., functions with inputs and outputs). This includes documentation for existing packages. For the components we have or plan to implement, we have listed the inputs and outputs.*
+
+
+
+This project is a dashboard using Python library and Tableau. This tool is built for YouTube creators, operators and advertisers to track trending categories, tags and indivisual videos. This tool can provided predicted tendency of indivisual video leveraging machine learning package.
 
 
 
@@ -51,17 +55,19 @@ Machine Learning model for precasting tendency of videos and calculating score f
   * css
   * html
   * Others
-* D3.js/Tableau
+* Tableau
   * Line chart
   * Buble chart
   * Animation 
-* Deploy d3.js/Tableau on github.io 
+* Deploy Tableau on github.io 
 * Others
 
-Back-end server for retrieving datasets using provided API and update report on Dashboard(pending)
+Back-end server for retrieving datasets using provided API and update report on Dashboard (pending)
 
 * Python code
 * Using bash to upload datasets
+
+
 
 ## Interaction Diagram
 
@@ -69,3 +75,6 @@ Back-end server for retrieving datasets using provided API and update report on 
 
 
 
+## Project tracking
+
+![image-20211205143828745](https://mechhucloud.oss-cn-hangzhou.aliyuncs.com/uPic/image-20211205143828745.png)

@@ -1,8 +1,12 @@
 # Functional Specification
 
-## User
+## Background
 
-We are mainly targeting YouTube creators, operators and advertisers. YouTube shows all the most popular and currently trending topics all over the world which are refreshed everyday. It is worthwhile to track these data everyday if you need prepare for taking new films, select recommended videos or evaluate the value of videos before collaboration.
+We are mainly targeting YouTube creators, operators and advertisers. YouTube shows all the most popular and currently trending topics all over the world which are refreshed everyday. It is worthwhile to track these data everyday if you want to prepare for taking new films, select recommended videos or evaluate the value of videos before collaboration.
+
+
+
+## User profile
 
  There are a few people that might be our potential users who can benefit from our app:
 
@@ -10,6 +14,17 @@ We are mainly targeting YouTube creators, operators and advertisers. YouTube sho
 2. An advertiser is searching for popular YouTube channels whose topics link their products well so that she can find the most suitable content creators to work with. The value of ads is also an imperative part when choosing channels which means the channel's video can be popular for several days.
 
 All these users do not have knowledge of programming like python or git because our app is based on the Web.
+
+
+
+## Data Sources
+
+Datasets:
+
+* US_youtube_trending_data (2020.8 - 2021.11)
+* US_category_id
+
+Source: https://www.kaggle.com/rsrishav/youtube-trending-video-dataset
 
 
 
