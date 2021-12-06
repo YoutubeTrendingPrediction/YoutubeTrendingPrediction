@@ -10,6 +10,8 @@ Team: BingWen Hu, Dau Cheng, Ray Wang and Xinrang Wang
 
 We are mainly targeting YouTube creators, operators and advertisers. YouTube shows all the most popular and currently trending topics all over the world which are refreshed everyday. It is worthwhile to track these data everyday if you want to prepare for taking new films, select recommended videos or evaluate the value of videos before collaboration.
 
+We also build a [Dashboard](https://daucheng.github.io/YTP/) for the web based on Tableau and [Github Page](https://github.com/daucheng/YTP)
+
 
 
 ## Directory Structure
