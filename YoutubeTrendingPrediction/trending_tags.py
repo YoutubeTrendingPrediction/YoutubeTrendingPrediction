@@ -4,7 +4,7 @@ This module is for tracking trending tags over time.
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("./data/US_youtube_trending_data.csv")
+df = pd.read_csv("../data/US_youtube_trending_data.csv")
 
 
 def time_fmt(tdf):
@@ -19,7 +19,7 @@ def time_fmt(tdf):
 
     Returns
     -------
-    Return a dataframe after formating time 
+    Return a dataframe after formating time
     """
 
     tdf["trending_date"] = pd.to_datetime(tdf.trending_date)
@@ -78,10 +78,4 @@ def select_year_and_month(tag_df, y_1, y_2, m_1, m_2):
     tag_ym_df = tag_y_df[tag_y_df["trending_date"].dt.month.isin(np.arange(m_1, m_2+1))]
     tag_ym_df = tag_ym_df[["tag_name", "frequency"]].groupby(["tag_name"]).count()\
         .sort_values(["frequency"], ascending=False).drop(index="[None]")
-    
     return tag_ym_df.head(20)
-
-
-# tag_df = split_tags()
-# print(select_year_and_month(tag_df,2021,2021,10,10))
-
