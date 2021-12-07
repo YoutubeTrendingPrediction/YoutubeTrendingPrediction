@@ -1,0 +1,12 @@
+************* Module trending_tags
+trending_tags.py:22:43: C0303: Trailing whitespace (trailing-whitespace)
+trending_tags.py:81:0: C0303: Trailing whitespace (trailing-whitespace)
+trending_tags.py:87:0: C0305: Trailing newlines (trailing-newlines)
+
+------------------------------------------------------------------
+Your code has been rated at 8.42/10 (previous run: 8.42/10, +0.00)
+
+raywang@Rays-MacBook-Pro YoutubeTrendingPrediction % pylint trending_prediction.py
+
+--------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
