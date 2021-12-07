@@ -2,19 +2,19 @@
 
 <img src="logo/ytp_logo.png?raw=true" alt="logo" title="Title"  />
 
-Team: Bingwen Hu, Dau Cheng, Ray Wang and Xinran Wang
+## About the project
+
+YouTube Trending Prediction(YTP) is a Dashboard for analyzing trends and predicting YouTube trending videos through YouTube trending videos datasets. 
+
+If you'd like to quickly preview the dashboard, you can visit our dashboard on the web: [YTP Web](https://daucheng.github.io/YTP/) 
 
 
 
-## Background
-
-We are mainly targeting YouTube creators, operators and advertisers. YouTube shows all the most popular and currently trending topics all over the world which are refreshed everyday. It is worthwhile to track these data everyday if you want to prepare for taking new films, select recommended videos or evaluate the value of videos before collaboration.
-
-We also build a [Dashboard](https://daucheng.github.io/YTP/) for the web based on Tableau and [Github Page](https://github.com/daucheng/YTP)
+YouTube shows all the most popular and currently trending topics all over the world which are refreshed every day. It is worthwhile to analyze these data if you want to prepare for taking new films, select recommended videos or evaluate the value of videos before collaboration. 
 
 
 
-## Directory Structure
+## Directory Structures
 
 ```
 YoutubeTrendingPrediction/
@@ -50,32 +50,33 @@ YoutubeTrendingPrediction/
 
 
 
-## Module Code
+## Datasets
+
+The project data is in csv and json files saved in `/data`.
+
+Source:
+
+* [US_youtube_trending_data (2020.8 - 2021.11)](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
+* [US_category_id](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
 
 
 
+## Install
 
-
-## Project Data
-
-In this case, the project data is rather small, and recorded in csv files saved in `/Data`.
-
-Datasets:
-
-* US_youtube_trending_data (2020.8 - 2021.11)
-* US_category_id
-
-Source: https://www.kaggle.com/rsrishav/youtube-trending-video-dataset
+`git clone https://github.com/cyclopropane2019/YoutubeTrendingPrediction.git`
 
 
 
 ## Example
 
-We have a demo notebook which will import all modules and export output for analysis.
+We have a demo notebook which will import all modules and export output for analysis. Feel free to manipulate data as you like in notebook.
 
 
 
 ## Testing
 
-It consists of unit tests for `trending_tags.py,`
+It consists of unit tests for `trending_tags.py`
 
+
+
+Team: Bingwen Hu, Dau Cheng, Ray Wang and Xinran Wang
