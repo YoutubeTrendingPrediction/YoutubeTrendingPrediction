@@ -41,13 +41,13 @@ Function: To display top 10 popular videos' tendency during a period of time.
 * The precasted trend of each video is also displayed.
 * Users will redirect to specific YouTube profile page by clicking videos tendency line.
 
-**Control Logic** 
+**Trending Prediction** 
 
-Machine Learning model for precasting tendency of videos and calculating score for each trending video.
+Long short term memory (LSTM) model for precasting future videos' view counts and trending tendency.
 
-* input:
-* model: 
-* ouput
+* input: video category
+* model: `TensorFlow` LSTM and `scipy` interpolate
+* ouput: A dictionary containing the videos on trending of the past 5 days and their predicted view counts and trending tendency of one day in advance.
 
 **A Dashboard based on Github page for visualization** 
 
