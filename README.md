@@ -2,7 +2,7 @@
 
 <img src="logo/ytp_logo.png?raw=true" alt="logo" title="Title"  />
 
-Team: BingWen Hu, Dau Cheng, Ray Wang and Xinran Wang
+Team: Bingwen Hu, Dau Cheng, Ray Wang and Xinran Wang
 
 
 
