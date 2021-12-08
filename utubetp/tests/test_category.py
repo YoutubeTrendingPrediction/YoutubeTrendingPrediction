@@ -27,6 +27,3 @@ class Testcategory(unittest.TestCase):
         """
         return
 
-suite=unittest.TestLoader().loadTestsFromTestCase(Testcategory)
-k=unittest.TextTestRunner().run(suite)
-`
