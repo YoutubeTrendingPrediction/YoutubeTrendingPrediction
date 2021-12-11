@@ -33,7 +33,6 @@ def df_cleaning(df_raw):
                                     'publishedAt', 'likes', 'dislikes', 'comment_count'], axis=1)
     df_cleaned = df_cleaned[df_cleaned['view_count'] > 0]
     df_cleaned['trending_date']= pd.to_datetime(df_cleaned.trending_date)
-    df_cleaned['publishedAt']= pd.to_datetime(df_cleaned.publishedAt)
     df_cleaned = df_cleaned.groupby(['video_id']).filter(lambda x: len(x) > 4)
     return df_cleaned
 
@@ -56,7 +55,7 @@ def get_video_ids(df_cleaned):
 
     if isinstance(df_cleaned, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
-    if df_cleaned == df:
+    if df_cleaned.equals(df):
         raise ValueError('DataFrame not cleaned!')
 
     video_ids = df_cleaned.video_id.unique()
@@ -81,7 +80,7 @@ def output_video_dict(df_cleaned):
 
     if isinstance(df_cleaned, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
-    if df_cleaned == df:
+    if df_cleaned.equals(df):
         raise ValueError('DataFrame not cleaned!')
 
     video_ids = get_video_ids(df_cleaned)
@@ -112,7 +111,7 @@ def get_current_trending(df_cleaned):
 
     if isinstance(df_cleaned, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
-    if df_cleaned == df:
+    if df_cleaned.equals(df):
         raise ValueError('DataFrame not cleaned!')
 
     start_date = df_cleaned['trending_date'].max() + pd.DateOffset(-4)
@@ -140,7 +139,7 @@ def get_current_ids(df_cleaned):
 
     if isinstance(df_cleaned, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
-    if df_cleaned == df:
+    if df_cleaned.equals(df):
         raise ValueError('DataFrame not cleaned!')
 
     current_trending = get_current_trending(df_cleaned)
@@ -168,7 +167,7 @@ def output_current_dict(df_cleaned):
 
     if isinstance(df_cleaned, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
-    if df_cleaned == df:
+    if df_cleaned.equals(df):
         raise ValueError('DataFrame not cleaned!')
 
     current_trending = get_current_trending(df_cleaned)
@@ -198,13 +197,14 @@ def pred_current_dict(df_cleaned):
 
     if isinstance(df_cleaned, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
-    if df_cleaned == df:
+    if df_cleaned.equals(df):
         raise ValueError('DataFrame not cleaned!')
 
     current_dict = output_current_dict(df_cleaned)
     current_ids = get_current_ids(df_cleaned)
     for i in current_ids:
         category = int(current_dict[i].categoryId.unique())
+        title = str(current_dict[i].title.unique()[0])
         trending_date = current_dict[i].trending_date.max() + pd.DateOffset(1)
         last_view_count = current_dict[i].view_count.max()
         x_points = list(current_dict[i].index)
@@ -213,6 +213,32 @@ def pred_current_dict(df_cleaned):
         view_count_pred = int(interpolate.splev(max(x_points) + 1, tck))
         if view_count_pred < last_view_count:
             view_count_pred = last_view_count + last_view_count - view_count_pred
-        current_dict[i].loc[len(current_dict[i].index)] = [i, category, trending_date,
-                                                            view_count_pred]
+        current_dict[i].loc[len(current_dict[i].index)] = [i, title, category,
+                                                            trending_date, view_count_pred]
     return current_dict
+
+
+def output_prediction_csv(df_cleaned):
+    """
+    Note
+    -------
+    This function transfer the dictionary with prediction values to a DataFrame,
+    and output that DataFrame into a csv file.
+
+    Parameters:
+    -------
+    df_cleaned: a pandas DataFrame, after cleaning
+    """
+
+    if isinstance(df_cleaned, pd.core.frame.DataFrame) is False:
+        raise TypeError('Input is not a DataFrame!')
+    if df_cleaned.equals(df):
+        raise ValueError('DataFrame not cleaned!')
+
+    prediction_dict = pred_current_dict(df_cleaned)
+    current_ids = get_current_ids(df_cleaned)
+    df_output = pd.DataFrame(columns=['video_id', 'title', 'categoryId',
+                                    'trending_date', 'view_count'])
+    for i in current_ids:
+        df_output = df_output.append(prediction_dict[i], ignore_index=True)
+    df_output.to_csv('/Users/raywang/Downloads/prediction.csv')
