@@ -218,7 +218,7 @@ def pred_current_dict(df_cleaned):
     return current_dict
 
 
-def output_prediction_csv(df_cleaned):
+def output_prediction(df_cleaned):
     """
     Note
     -------
@@ -241,4 +241,4 @@ def output_prediction_csv(df_cleaned):
                                     'trending_date', 'view_count'])
     for i in current_ids:
         df_output = df_output.append(prediction_dict[i], ignore_index=True)
-    df_output.to_csv('/Users/raywang/Downloads/prediction.csv')
+    return df_output
