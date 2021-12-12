@@ -3,7 +3,6 @@ This module is used to analysis the trending categoriy along with
 the time variation. The time steps can be daily and monthly.
 """
 
-import numpy as np
 import pandas as pd
 
 df_category=pd.read_csv('../data/US_category_id.csv')

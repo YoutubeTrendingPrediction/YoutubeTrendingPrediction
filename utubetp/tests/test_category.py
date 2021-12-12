@@ -3,8 +3,7 @@ Test for the category module
 """
 
 import unittest
-import numpy as np
-from YoutubeTrendingPrediction.category import
+from utubetp.category import *
 
 
 

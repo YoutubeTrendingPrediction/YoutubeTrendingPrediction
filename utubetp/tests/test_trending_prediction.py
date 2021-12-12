@@ -4,7 +4,7 @@ Tests for the trending_prediction module
 
 import unittest
 import numpy as np
-from YoutubeTrendingPrediction.trending_prediction import 
+from utubetp.trending_prediction import *
 
 
 

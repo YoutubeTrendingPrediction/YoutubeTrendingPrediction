@@ -4,7 +4,7 @@ Tests for the trending_tags module
 
 import unittest
 import numpy as np
-from YoutubeTrendingPrediction.trending_tags import select_year_and_month
+from utubetp.trending_tags import *
 
 
 
