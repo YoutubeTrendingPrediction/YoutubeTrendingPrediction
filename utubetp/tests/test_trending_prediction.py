@@ -49,9 +49,3 @@ class TestKnn(unittest.TestCase):
         """
         Edge test to make sure the function throws a ValueError
         """
-        
-
-suite = unittest.TestLoader().loadTestsFromTestCase(TestKnn)
-_ = unittest.TextTestRunner().run(suite)
-# if __name__ == '__main__':
-#     unittest.main()
