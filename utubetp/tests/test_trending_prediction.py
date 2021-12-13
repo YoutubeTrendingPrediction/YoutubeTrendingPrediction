@@ -19,7 +19,7 @@ class TestTrendingPred(unittest.TestCase):
 
     def test_smoke(self):
         """Smoke test to ensure the function running."""
-        df = pd.read_csv('../../data/US_youtube_trending_data.csv')
+        df = pd.read_csv('./data/US_youtube_trending_data.csv')
         df_cleaned = df_cleaning(df)
         get_video_ids(df_cleaned)
         output_video_dict(df_cleaned)
@@ -32,7 +32,7 @@ class TestTrendingPred(unittest.TestCase):
 
     def test_one_shot(self):
         """One shot test to make sure the cleaned DataFrame has the correct schema"""
-        df = pd.read_csv('../../data/US_youtube_trending_data.csv')
+        df = pd.read_csv('./data/US_youtube_trending_data.csv')
         df_cleaned = df_cleaning(df)
         assert list(df_cleaned.columns) == ['video_id', 'title', 'categoryId',
                                             'trending_date', 'view_count']
@@ -51,7 +51,7 @@ class TestTrendingPred(unittest.TestCase):
         """
         Edge test with input of the original DataFrame, to see the function can throw a ValueError.
         """
-        df = pd.read_csv('../../data/US_youtube_trending_data.csv')
+        df = pd.read_csv('./data/US_youtube_trending_data.csv')
         df_cleaned = df
         with self.assertRaises(ValueError):
             get_video_ids(df_cleaned)
