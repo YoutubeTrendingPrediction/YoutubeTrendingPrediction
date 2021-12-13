@@ -49,8 +49,9 @@ This folder contains all the documentation related to the project, namely:
 
 ## Install
 
+```
 git clone https://github.com/cyclopropane2019/YoutubeTrendingPrediction.git`
-
+```
 
 ## Software dependencies and license information
 
