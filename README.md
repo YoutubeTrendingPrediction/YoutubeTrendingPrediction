@@ -21,16 +21,32 @@ If you'd like to quickly preview the dashboard, you can visit our dashboard on t
 #### Xinran Wang
 
 
+## Examples
+
+We have notebooks, which will import all modules and generate output for trending categories, trending tags
+and trending prediction.
+
+
 ## Data
 
-* Source 1:[US_youtube_trending_data (2020.8 - 2021.11)](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
+* Source 1: [US_youtube_trending_data (2020.8 - 2021.11)](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
 
-* Source 2:[US_category_id](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
+* Source 2: [US_category_id](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
+
+## Documents
+
+This folder contains all the documentation related to the project, namely:
+
+* Design specification and project plan
+
+* Functional specification
+
+* Final presentation
 
 
 ## Install
 `
-git clone https://github.com/cyclopropane2019/YoutubeTrendingPrediction.git`
+* git clone https://github.com/cyclopropane2019/YoutubeTrendingPrediction.git`
 
 
 ## Software dependencies and license information
@@ -47,8 +63,8 @@ git clone https://github.com/cyclopropane2019/YoutubeTrendingPrediction.git`
 
 #### License Information:
 
-The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). As a permissive license, it puts only very limited restriction on reuse and has therefore an excellent license compatibility. For detailed description of the contents of license please refer to the file [License](https://github.com/wangbeiqi199159/analyze-of-seattle-airbnb-hosts/blob/master/LICENSE).
-
+The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). As a permissive license, it puts only very limited restriction on reuse and has therefore an excellent license compatibility. For detailed description of the contents of license please refer to the file [License]
+(https://github.com/YoutubeTrendingPrediction/YoutubeTrendingPrediction/blob/main/LICENSE).
 
 ## Directory Structure
 
