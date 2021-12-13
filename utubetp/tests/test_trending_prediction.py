@@ -17,7 +17,8 @@ from utubetp.trending_prediction import pred_current_dict
 class TestTrendingPred(unittest.TestCase):
     """Class for unittest."""
 
-    def test_smoke(self):
+    @classmethod
+    def test_smoke(cls):
         """Smoke test to ensure the function running."""
         df_raw = pd.read_csv('./data/US_youtube_trending_data.csv')
         df_cleaned = df_cleaning(df_raw)
@@ -29,7 +30,8 @@ class TestTrendingPred(unittest.TestCase):
         pred_current_dict(df_cleaned)
         output_prediction(df_cleaned)
 
-    def test_one_shot(self):
+    @classmethod
+    def test_one_shot(cls):
         """One shot test to make sure the cleaned DataFrame has the correct schema"""
         df_raw = pd.read_csv('./data/US_youtube_trending_data.csv')
         df_cleaned = df_cleaning(df_raw)
