@@ -10,7 +10,10 @@ experience, while sponsors to promote their products.
 
 The YouTubeTrends team aims to offer a tool for influencers to have a deeper understanding among future trending topics, popular tags, data for individual videos, which helps them to prepare for their own videos content. Meanwhile,
 sponsers can know where to advertise and maximize the benefits.
-If you'd like to quickly preview the dashboard, you can visit our dashboard on the web: [YTP Web](https://daucheng.github.io/YTP/) 
+
+## Website Page
+
+If you'd like to quickly preview the dashboard, you can visit by clicking here: [YTP Web](https://daucheng.github.io/YTP/) 
 
 
 ## Team Members
@@ -45,8 +48,8 @@ This folder contains all the documentation related to the project, namely:
 
 
 ## Install
-`
-* git clone https://github.com/cyclopropane2019/YoutubeTrendingPrediction.git`
+
+git clone https://github.com/cyclopropane2019/YoutubeTrendingPrediction.git`
 
 
 ## Software dependencies and license information
@@ -63,8 +66,7 @@ This folder contains all the documentation related to the project, namely:
 
 #### License Information:
 
-The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). As a permissive license, it puts only very limited restriction on reuse and has therefore an excellent license compatibility. For detailed description of the contents of license please refer to the file [License]
-(https://github.com/YoutubeTrendingPrediction/YoutubeTrendingPrediction/blob/main/LICENSE).
+The MIT License is a permissive free software license originating at the Massachusetts Institute of Technology (MIT). As a permissive license, it puts only very limited restriction on reuse and has therefore an excellent license compatibility. For detailed description of the contents of license please refer to the file [License](https://github.com/YoutubeTrendingPrediction/YoutubeTrendingPrediction/blob/main/LICENSE).
 
 ## Directory Structure
 
