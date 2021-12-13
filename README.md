@@ -1,6 +1,6 @@
 <img src="logo/ytp_logo.png?raw=true" alt="logo" title="Title"  />
 
-#YouTubeTrends
+# YouTubeTrends
 
 # "Analysis and Trending Prediction of YouTube"
 
@@ -13,15 +13,15 @@ sponsers can know where to advertise and maximize the benefits.
 If you'd like to quickly preview the dashboard, you can visit our dashboard on the web: [YTP Web](https://daucheng.github.io/YTP/) 
 
 
-##Team Members
+## Team Members
 
-####Bingwen Hu
-####Dau Cheng
-####Ray Wang
-####Xinran Wang
+#### Bingwen Hu
+#### Dau Cheng
+#### Ray Wang
+#### Xinran Wang
 
 
-##Data
+## Data
 
 * Source 1:[US_youtube_trending_data (2020.8 - 2021.11)](https://www.kaggle.com/rsrishav/youtube-trending-video-dataset)
 
