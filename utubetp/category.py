@@ -1,5 +1,5 @@
 """
-This module is used to analysis the trending categoriy along with 
+This module is used to analysis the trending categoriy along with
 the time variation. The time steps can be daily and monthly.
 """
 
@@ -23,8 +23,8 @@ def timesplit(data):
 
 def dataframecombine(dataframea,dataframeb):
     """
-    This function is used to combine two different dataframe based on same 
-    column valu额。
+    This function is used to combine two different dataframe based on same
+    column value.
     Input: Two dataframe needed to be combined.
     Output: A new combined dataframe
     """
@@ -47,7 +47,3 @@ def splitcategory(df1):
     df5=df4.reset_index()
     df6=df5.drop(['index'],axis=1)
     return df6
-
-
-
-

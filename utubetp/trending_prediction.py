@@ -6,7 +6,7 @@ and trending tendency of the current trending videos.
 import pandas as pd
 from scipy import interpolate
 
-df = pd.read_csv('../data/US_youtube_trending_data.csv')
+df = pd.read_csv('./data/US_youtube_trending_data.csv')
 
 
 def df_cleaning(df_raw):
