@@ -12,7 +12,7 @@ The YouTubeTrendingprediction team aims to offer a tool for Youtubers to have a 
 
 ## Website Page
 
-The link for the website: [YTP Web](https://youtubetrendingprediction.github.io/YTP/) 
+The website presents the relationship among catergories, tags and individual videos basing on the timeline. For more information, you can click the link for the website: [YTP Web](https://youtubetrendingprediction.github.io/YTP/) 
 
 
 ## Project Contributers
@@ -32,7 +32,7 @@ The link for the website: [YTP Web](https://youtubetrendingprediction.github.io/
 The tool can be installed using the following instructions.
 
  1. Please open the terminal on your computer
- 2. Clone the repository using: `git clone https://github.com/YoutubeTrendingPrediction/YoutubeTrendingPrediction.git`
+ 2. Clone the repository using: `git clone  https://github.com/YoutubeTrendingPrediction/YoutubeTrendingPrediction.git`
  3. Find the website link on `README.md`
 
 
@@ -87,3 +87,8 @@ YoutubeTrendingPrediction/
   |- requirements.txt
   |- setup.py
 ```
+
+
+## Acknowledge
+
+Much appreciation to Prof. David Beck and Anant Mittal from the University of Washington for their support, guidance and encouragement in this project.
