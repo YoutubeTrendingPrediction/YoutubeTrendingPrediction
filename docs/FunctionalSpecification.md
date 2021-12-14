@@ -8,61 +8,41 @@ YouTube is a worldwide platform that can show the most popular and currently tre
 ## User profile
 
 * YouTubers:
-The YouTubers will interact with this tool by understanding what kind of topics are most popular these days. The tool will show them the top 20 categories and tags that have the highest number of viewing in the time peirod they select. The time peirod can be days and months. A statistical model will be built from this data and used to predict the tendancy of topics becoming more or less popular. Besides, they can click at topics that they want to explore to see the current situation in details. The tool offers the proportion of different kinds of comments and the time period in a day that this topic trends, which tells influencers what aspects the audience have more interest in or some areas remain undeveloped and can be explored. Influencers can adjust their video content or change key points to make their videos stand out.
-In order to make their own videos, YouTubers are seeking for a tool which can show the most popular genres at the present and can offer them a peek into what can stay populur in the near future, allowing them to leverage a particular topic to reach out and connect to the most amount of viewers.
-* An advertiser is searching for popular YouTube channels whose topics link their products well so that she can find the most suitable content creators to work with. The value of ads is also an imperative part when choosing channels which means the channel's video can be popular for several days.
+The YouTubers will interact with this tool by understanding what kind of topics are most popular these days. The tool will show them the categories and tags that have the highest amount of view counts in the time periods they select, which can be days and months. A statistical model will be built from this data and used to predict the tendancy of topics becoming more or less popular. Besides, they can click at topics that they want to explore to see the current situation in details.Thus, they can produce their own videos based the information gathered by this tool.
 
-All these users do not have knowledge of programming like python or git because our app is based on the Web.
-
+* Sponsors: 
+Sponsors will search for popular YouTube channels whose topics can connect well with their products so that they can find the most suitable influencers to work with. The value of ads is also an imperative part when choosing channels which means the channel's video can be popular for several days.
 
 
-## Data Sources
+## User background knowledge
 
-Datasets:
-
-* US_youtube_trending_data (2020.8 - 2021.11)
-* US_category_id
-
-Source: https://www.kaggle.com/rsrishav/youtube-trending-video-dataset
+Both these users do not need to have knowledge of programming like python or git because our app is based on the Web.
 
 
+## User Cases
 
-## Use Cases
+Youtubers:
+A YouTuber wants to search trending videos which are related to his domain and retrieves respective views count, likes count and dislikes count. Given the real-time tendency of each topics, he also wants to know predicted tendency in the future.
 
-1. A YouTube creator wants to search top 10 trends videos which are related to his domain and retrieve respective views count, likes count and dislikes count. Given the real-time tendency of each topics, he also wants to know predicted tendency in the future.
-
-   **Dashboard**: Displaying the top 20 trending categories in a buble chart
-   **User**: Click on a trending category on the screen they are most interested in
-
-   **Dashboard**: Displaying hottest hashtags in a word cloud
-
-   **User**: Click on a hashtag on the screen they are most interested in
-
-   **Dashboard**: Showing the top 10 videos tendency(evaluate them with score) with specific category and tag during several days.
-   **User**: Click on the prediction button
-   **Dashboard**: Showing the prediction and related info of the video. (Related/Similar trending Video, People who might interest, Value of the video)
-
+   **Dashboard**: Displays hottest hashtags in word cloud
+   **User**: Choose time range and click on a hashtag on the screen to see videos under the tag
+   **Dashboard**: Offers a search box to search tags and gives recommanded key words
+   **User**: Type in the tag name in the search box and can see the trending channels and videos that under the tag
+   **Dashboard**: Display the trending categories in line chart
+   **User**: Choose time ranges and categories by clicking filters on the screen to see the specific amount at specific times
+   **Dashboard**: Showing videos tendency in bubble chart and line chart
+   **User**: Click on the interested category to see corresponding view counts changing curve
+   **Dashboard**: Showing the prediction and related information of the video.
    **User**: Learning what happened on the Internet and jump on the bandwagon.
 
-   [User: (After making their video) Types some keywords about their creation.
-   Dashboard: Show system the prediction and related info of the video. (Related/Similar trending Video, People who might interest, Value of the video)] pending
 
-   
-
-2. The advertiser wants to know the hottest trend or category. Given the hashtags of trend videos, she wants to link their products with the hottest trend and find the most suitable content creators to work with. She also wants to valuate the value of the ads using key features of the video(viewers, likes, dislikes) 
+Sponsors:
+A sponsor wants to know the hottest trend or category. Given the hashtags of trend videos, he wants to link their products with the hottest trend and finds the most suitable influencers to work with. He also wants to valuate the value of the ads using key features of the video(viewers, likes, dislikes) 
 
    **Dashboard**: Displaying the top 20 trending categories in a buble chart
    **User**: Click on a trending category on the screen they are most interested in
-
    **Dashboard**: Displaying hottest hashtags in a word cloud
-
    **User**: Click on a hashtag on the screen they are most interested in
-
    **Dashboard**: Showing the top 10 videos tendency(evaluate them with score) with specific category and tag during several days.
-
    **User**: Click on a video tendency line
-
    **Dashboard**: Showing the video profile and redircting to their webpage
-
-   
-

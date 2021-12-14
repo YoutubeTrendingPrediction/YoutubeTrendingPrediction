@@ -36,7 +36,7 @@ The tool can be installed using the following instructions.
  3. Find the website link on `README.md`
 
 
-## Tool
+## Tools
 
 The raw data analysis process takes advantage of three modules.
 
@@ -91,6 +91,6 @@ YoutubeTrendingPrediction/
 
 ## Acknowledge
 
-This project is created for the course CSE583: Software Development for Data Scientists, at the Paul G. Allen School of Computer Science & Engineering within the University of Washington. Much appreciation to Prof. David Beck and Anant Mittal from the University of Washington for their support, guidance and encouragement in this project.
+This project is created for the course CSE583: Software Development for Data Scientists, at the Paul G. Allen School of Computer Science & Engineering within the University of Washington. Much appreciation to Prof. David Beck and Anant Mittal for their support, guidance and encouragement in this project.
 
 
