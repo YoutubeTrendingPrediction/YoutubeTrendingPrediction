@@ -25,24 +25,45 @@ Youtubers:
 A YouTuber wants to search trending videos which are related to his domain and retrieves respective views count, likes count and dislikes count. Given the real-time tendency of each topics, he also wants to know predicted tendency in the future.
 
    **Dashboard**: Displays hottest hashtags in word cloud
+   
    **User**: Choose time range and click on a hashtag on the screen to see videos under the tag
+   
    **Dashboard**: Offers a search box to search tags and gives recommanded key words
+   
    **User**: Type in the tag name in the search box and can see the trending channels and videos that under the tag
+   
    **Dashboard**: Display the trending categories in line chart
+
    **User**: Choose time ranges and categories by clicking filters on the screen to see the specific amount at specific times
+   
    **Dashboard**: Showing videos tendency in bubble chart and line chart
+   
    **User**: Click on the interested category to see corresponding view counts changing curve
+   
    **Dashboard**: Showing the prediction and related information of the video.
+   
    **User**: Learning what happened on the Internet and jump on the bandwagon.
 
 
 Sponsors:
 A sponsor wants to know the hottest trend or category. Given the hashtags of trend videos, he wants to link their products with the hottest trend and finds the most suitable influencers to work with. He also wants to valuate the value of the ads using key features of the video(viewers, likes, dislikes) 
 
-   **Dashboard**: Displaying the top 20 trending categories in a buble chart
-   **User**: Click on a trending category on the screen they are most interested in
-   **Dashboard**: Displaying hottest hashtags in a word cloud
-   **User**: Click on a hashtag on the screen they are most interested in
-   **Dashboard**: Showing the top 10 videos tendency(evaluate them with score) with specific category and tag during several days.
-   **User**: Click on a video tendency line
-   **Dashboard**: Showing the video profile and redircting to their webpage
+   **Dashboard**: Displays hottest hashtags in word cloud
+   
+   **User**: Choose time range and click on a hashtag on the screen to see videos under the tag
+   
+   **Dashboard**: Offers a search box to search tags and gives recommanded key words
+
+   **User**: Type in the tag name in the search box and can see the trending channels and videos that under the tag
+   
+   **Dashboard**: Display the trending categories in line chart
+   
+   **User**: Choose time ranges and categories by clicking filters on the screen to see the specific amount at specific times
+   
+   **Dashboard**: Showing videos tendency in bubble chart and line chart
+   
+   **User**: Click on the interested category to see corresponding view counts changing curve
+   
+   **Dashboard**: Showing the prediction and related information of the video.
+   
+   **User**: Learning what happened on the Internet and jump on the bandwagon.
