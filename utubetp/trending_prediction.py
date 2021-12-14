@@ -6,7 +6,7 @@ and trending tendency of the current trending videos.
 import pandas as pd
 from scipy import interpolate
 
-df = pd.read_csv('../data/US_youtube_trending_data.csv')
+df = pd.read_csv('./data/US_youtube_trending_data.csv')
 
 
 def df_cleaning(df_raw):
@@ -218,7 +218,7 @@ def pred_current_dict(df_cleaned):
     return current_dict
 
 
-def output_prediction_csv(df_cleaned):
+def output_prediction(df_cleaned):
     """
     Note
     -------
@@ -241,4 +241,4 @@ def output_prediction_csv(df_cleaned):
                                     'trending_date', 'view_count'])
     for i in current_ids:
         df_output = df_output.append(prediction_dict[i], ignore_index=True)
-    df_output.to_csv('/Users/raywang/Downloads/prediction.csv')
+    return df_output
