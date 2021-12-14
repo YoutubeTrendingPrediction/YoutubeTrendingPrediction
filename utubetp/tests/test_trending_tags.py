@@ -4,7 +4,7 @@ Tests for the trending_tags module
 
 import unittest
 import numpy as np
-from utubetp.trending_tags import *
+import trending_tags
 
 
 
@@ -14,7 +14,9 @@ class TestKnn(unittest.TestCase):
         """
         Simple smoke test to make sure function runs.
         """
-        
+        tag_df = trending_tags.split_tags()
+        trending_tags.select_year_and_month(tag_df,2021,2021,10,10)
+
         return
 
     def test_one_shot1(self):
@@ -49,7 +51,7 @@ class TestKnn(unittest.TestCase):
         """
         Edge test to make sure the function throws a ValueError
         """
-        
+        return
 
 suite = unittest.TestLoader().loadTestsFromTestCase(TestKnn)
 _ = unittest.TextTestRunner().run(suite)
