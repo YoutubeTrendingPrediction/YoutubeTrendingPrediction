@@ -4,7 +4,9 @@ This module is for tracking trending tags over time.
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv("../data/US_youtube_trending_data.csv")
+def read_data():
+    df = pd.read_csv("../data/US_youtube_trending_data.csv")
+    return df
 
 
 def time_fmt(tdf):
@@ -21,10 +23,17 @@ def time_fmt(tdf):
     -------
     Return a dataframe after formating time
     """
-
-    tdf["trending_date"] = pd.to_datetime(tdf.trending_date)
-    tdf["publishedAt"] = pd.to_datetime(tdf.publishedAt)
-    return tdf
+    # check 1: if variable is dataframe
+    if not isinstance(tdf, pd.DataFrame):
+        print("Please input Dataframe")
+        raise TypeError("n_neighbors should be an integer!")
+    try:
+        tdf["trending_date"] = pd.to_datetime(tdf.trending_date)
+        tdf["publishedAt"] = pd.to_datetime(tdf.publishedAt)
+        return tdf
+    except ValueError:
+        print("Error occured when input raw datasets")
+        return
 
 
 def split_tags():
@@ -41,14 +50,19 @@ def split_tags():
     -------
     Return a dataframe after spliting every tags
     """
-
-    time_fmt_df = time_fmt(df)
-    tag_slt_df = pd.concat([time_fmt_df["trending_date"], time_fmt_df["tags"]
-                           .str.split(pat='|', expand=False)], axis=1)
-    tag_df = pd.DataFrame([[x] + [z] for x, y in zip(tag_slt_df.index, tag_slt_df.tags) for z in y])
-    tag_df = tag_df.merge(tag_slt_df, left_on=0, right_index=True)
-    tag_df.rename(columns={1: "tag_name", 0: "frequency"}, inplace=True)
-    return tag_df
+    
+    tdf = read_data()
+    try:
+        time_fmt_df = time_fmt(tdf)
+        tag_slt_df = pd.concat([time_fmt_df["trending_date"], time_fmt_df["tags"]
+                            .str.split(pat='|', expand=False)], axis=1)
+        tag_df = pd.DataFrame([[x] + [z] for x, y in zip(tag_slt_df.index, tag_slt_df.tags) for z in y])
+        tag_df = tag_df.merge(tag_slt_df, left_on=0, right_index=True)
+        tag_df.rename(columns={1: "tag_name", 0: "frequency"}, inplace=True)
+        return tag_df
+    except ValueError:
+        print("Error occured when spliting tags")
+        return
 
 
 def select_year_and_month(tag_df, y_1, y_2, m_1, m_2):
@@ -73,9 +87,29 @@ def select_year_and_month(tag_df, y_1, y_2, m_1, m_2):
     -------
     Return a dataframe with top 20 tags in period of time
     """
-
+    # check 1: if tag_df is dataframe
+    if not isinstance(tag_df, pd.DataFrame):
+        print("Please input Dataframe")
+        return
+    
+    # check 2: if variables are integer
+    if not isinstance(y_1,int):
+        print("Please input integers")
+        return
+    if not isinstance(y_2,int):
+        print("Please input integers")
+        return
+    if not isinstance(m_1,int):
+        print("Please input integers")
+        return
+    if not isinstance(m_2,int):
+        print("Please input integers")
+        return
     tag_y_df = tag_df[tag_df["trending_date"].dt.year.isin(np.arange(y_1, y_2+1))]
     tag_ym_df = tag_y_df[tag_y_df["trending_date"].dt.month.isin(np.arange(m_1, m_2+1))]
     tag_ym_df = tag_ym_df[["tag_name", "frequency"]].groupby(["tag_name"]).count()\
         .sort_values(["frequency"], ascending=False).drop(index="[None]")
     return tag_ym_df.head(20)
+
+
+time_fmt(3)
