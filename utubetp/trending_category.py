@@ -55,6 +55,8 @@ def detailtimesplit(datagraph):
     Input: The previous groupbyed dataframe
     Ouput: Seperated monthly data in a list
     """
+    yearnumber=df6.year.unique()
+    monthnumber=df6.month.unique()
     set=[]
     for i in yearnumber:
          for j in range(1,13):
