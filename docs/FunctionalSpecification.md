@@ -2,16 +2,15 @@
 
 ## Background
 
-We are mainly targeting YouTube creators, operators and advertisers. YouTube shows all the most popular and currently trending topics all over the world which are refreshed everyday. It is worthwhile to track these data everyday if you want to prepare for taking new films, select recommended videos or evaluate the value of videos before collaboration.
-
+YouTube is a worldwide platform that can show the most popular and currently trending videos updating everyday, which means that it is worthwhile to track these data if wanting to prepare for making new vidoes, selecting recommended topics and evaluating the value of videos before collaboration.Thus, it is obvious that we are targeted at YouTubers and sponsors.
 
 
 ## User profile
 
- There are a few people that might be our potential users who can benefit from our app:
-
-1. YouTube creators are seeking a tool to track the most popular videos and genres at the moment in order to grow their channels. This tool is capable to give creators a peek into what is currently popular and might be in the future. This app allows them to leverage a particular topic to reach out and connect to the most amount of viewers.
-2. An advertiser is searching for popular YouTube channels whose topics link their products well so that she can find the most suitable content creators to work with. The value of ads is also an imperative part when choosing channels which means the channel's video can be popular for several days.
+* YouTubers:
+The YouTubers will interact with this tool by understanding what kind of topics are most popular these days. The tool will show them the top 20 categories and tags that have the highest number of viewing in the time peirod they select. The time peirod can be days and months. A statistical model will be built from this data and used to predict the tendancy of topics becoming more or less popular. Besides, they can click at topics that they want to explore to see the current situation in details. The tool offers the proportion of different kinds of comments and the time period in a day that this topic trends, which tells influencers what aspects the audience have more interest in or some areas remain undeveloped and can be explored. Influencers can adjust their video content or change key points to make their videos stand out.
+In order to make their own videos, YouTubers are seeking for a tool which can show the most popular genres at the present and can offer them a peek into what can stay populur in the near future, allowing them to leverage a particular topic to reach out and connect to the most amount of viewers.
+* An advertiser is searching for popular YouTube channels whose topics link their products well so that she can find the most suitable content creators to work with. The value of ads is also an imperative part when choosing channels which means the channel's video can be popular for several days.
 
 All these users do not have knowledge of programming like python or git because our app is based on the Web.
 

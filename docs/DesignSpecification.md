@@ -1,64 +1,28 @@
 # YouTubeTrends - Design Specification
 
-# COMPONENTS
+## Components
 
 *This section lists the components that we expect to have in our project (not necessarily a complete list), what they do, and how they interface (e.g., functions with inputs and outputs). This includes documentation for existing packages. For the components we have or plan to implement, we have listed the inputs and outputs.*
 
 
-## Category Bubble Chart for trending topics 
+## Word Cloud
 
-* Bubble Chart displays top 20 trending categories. The area of each circle is proportional to its trending score which is calculated by the amount of views, likes and trending days.
+Tags are origanized in the style of Word Cloud and those trending ones will be in larger sizes being proportional to the total amount. In order to hightlight the more frequent ones, we only pick top 20 tags in the selected time ranges. Besides, each tag can be clicked to see videos that belong to it.
 
-* There is a filter beside so that the reader can choose different time range, such as a specific date or the average number of a month.
 
-## Word Cloud/Tag Cloud
+## Search Box
 
-* Tags are origanized in the style of Word Cloud and trending ones will be highlighted, as well as their size are based on frequency.
-
-* Every tag can be clicked to see detailed information.
+Below the searching bar, there are several recommanded YouTube top searching key words, which offers readers options. Furthermore, since in the aforemetioned Word Cloud, tags show up in a more random and disordered way, it is true that the diagram is more direct for readers to know what tags are more popular, but if readers want to look up for specific tags, the set of the Search Box can be a more reasonable and convenient way. In other words, it is intended as a supplement to the Word Cloud. Searching each tag, channels and videos that belongs to it will show up with corresponding amount in two seperate columns and in dscending sequence as default. 
 
 
 ## Line Chart
 
-* Line Chart will display the top 10 popular videos' tendency in a period of time.
-
-* Scores can indicate popularity of each trending videos, wchih are calculated by using machine learning..
+Line Chart displays popular categories in selected time ranges, it gives reader a general understanding of the past trending situation.
 
 
-## Trending Prediction Model
+## Category Bubble Chart for trending prediction
 
-Long short term memory (LSTM) model for precasting future videos' view counts and trending tendency.
-
-* Input: video category
-* Model: `TensorFlow` LSTM and `scipy` interpolate
-* Ouput: A dictionary containing trending videos in the past 5 days and their predicted view counts as well as the trending tendency of one day in advance.
-
-## A Dashboard based on Github page for Visualization
-
-* Github page(github.io)
-  
-  * css
-  
-  * html
-  
-  * Others
-
-* Tableau
-  
-  * Line charts
-  
-  * Bubble charts
-  
-  * Animation 
-
-* Deploy Tableau on github.io 
-
-
-* Back-end server for retrieving datasets using provided API and update report on Dashboard (pending)
-
-  * Python code
-
-  * Using bash to upload datasets
+We use long-short term memory (LSTM) model for precasting future videos' view counts amount and trending tendency. Bubble Chart displays trending categories in the nearest 30 days, the area of each circle is proportional to its total amount. When selecting each category, its corresponding bar charts and curve trend will show up consisting of existed view counts number and one day prediction in different colors. On top of that, not only does each category has a general prediction amount, but also specific videos in the category have.
 
 
 ## Interaction Diagram

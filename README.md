@@ -91,4 +91,6 @@ YoutubeTrendingPrediction/
 
 ## Acknowledge
 
-Much appreciation to Prof. David Beck and Anant Mittal from the University of Washington for their support, guidance and encouragement in this project.
+This project is created for the course CSE583: Software Development for Data Scientists, at the Paul G. Allen School of Computer Science & Engineering within the University of Washington. Much appreciation to Prof. David Beck and Anant Mittal from the University of Washington for their support, guidance and encouragement in this project.
+
+
