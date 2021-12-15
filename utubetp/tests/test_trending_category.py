@@ -31,10 +31,9 @@ class TestCategory(unittest.TestCase):
          can throw a TypeError
          """
         df=pd.read_csv('../data/US_category_id.csv')
-         randomdata=[a,b,c,d,3,4]
+        randomdata=[a,b,c,d,3,4]
         with self.assertRaises(TypeError):
-         timesplit(df)
-         dataframecombine(randomdata,df)
-         splitcategory(df)
-         detailtimesplit(df)
-
+            timesplit(df)
+            dataframecombine(randomdata,df)
+            splitcategory(df)
+            detailtimesplit(df)
