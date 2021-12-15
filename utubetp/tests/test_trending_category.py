@@ -16,24 +16,25 @@ class TestCategory(unittest.TestCase):
         The smoke test makes sure that the function runs well
         
         """
-        df_category=pd.read_csv('../data/US_category_id.csv')
-        df=pd.read_csv('../data/US_youtube_trending_data.csv')
+        df_category=pd.read_csv('./data/US_category_id.csv')
+        df=pd.read_csv('./data/US_youtube_trending_data.csv')
         newdataframe= timesplit(df)
-        preprocessframe=dataframecombine(df_category,newdataframe)
+        preprocessframe=dataframecombine(newdataframe,df_category)
         outputframe1=splitcategory(preprocessframe)
         outputframe2=detailtimesplit(outputframe1)
         return
 
+
     def test_edge(self):
-    """
-    Edge test with wrong type of data input, to see if the function
-    can throw a TypeError
-    """
-    df=pd.read_csv('../data/US_category_id.csv')
-    randomdata=[a,b,c,d,3,4]
-    with self.assertRaises(TypeError):
-        timesplit(df)
-        dataframecombine(randomdata,df)
-        splitcategory(df)
-        detailtimesplit(df)
+         """
+         Edge test with wrong type of data input, to see if the function
+         can throw a TypeError
+         """
+        df=pd.read_csv('../data/US_category_id.csv')
+         randomdata=[a,b,c,d,3,4]
+        with self.assertRaises(TypeError):
+         timesplit(df)
+         dataframecombine(randomdata,df)
+         splitcategory(df)
+         detailtimesplit(df)
 
