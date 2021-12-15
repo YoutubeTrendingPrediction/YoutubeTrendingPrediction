@@ -41,7 +41,7 @@ class TestTrendingTags(unittest.TestCase):
                                      'categoryId', 'trending_date', 'tags', 'view_count', 'likes',
                                      'dislikes', 'comment_count', 'thumbnail_link', 'comments_disabled',
                                      'ratings_disabled', 'description']
-        
+
     def test_edge_timefmt_not_df(self):
         """
         Edge test with wrong type of data input, to see the function can throw a TypeError.
