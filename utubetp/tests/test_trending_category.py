@@ -20,7 +20,7 @@ class TestCategory(unittest.TestCase):
         df_category = pd.read_csv('./data/US_category_id.csv')
         df_raw = pd.read_csv('./data/US_youtube_trending_data.csv')
         newdataframe = timesplit(df_raw)
-        preprocessframe = dataframecombine(newdataframe,df_category)
+        preprocessframe = dataframecombine(newdataframe, df_category)
         outputframe1 = splitcategory(preprocessframe)
         detailtimesplit(outputframe1)
         return
