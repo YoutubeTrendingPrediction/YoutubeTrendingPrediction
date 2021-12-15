@@ -29,8 +29,8 @@ def df_cleaning(df_raw):
         raise TypeError('Input is not a DataFrame!')
 
     df_cleaned = df_raw.drop(columns=['channelId', 'channelTitle', 'tags', 'thumbnail_link',
-                            'comments_disabled', 'ratings_disabled', 'description',
-                            'publishedAt', 'likes', 'dislikes', 'comment_count'], axis=1)
+                                      'comments_disabled', 'ratings_disabled', 'description',
+                                      'publishedAt', 'likes', 'dislikes', 'comment_count'], axis=1)
     df_cleaned = df_cleaned[df_cleaned['view_count'] > 0]
     df_cleaned['trending_date'] = pd.to_datetime(df_cleaned.trending_date)
     df_cleaned = df_cleaned.groupby(['video_id']).filter(lambda x: len(x) > 4)
@@ -238,7 +238,7 @@ def output_prediction(df_cleaned):
     prediction_dict = pred_current_dict(df_cleaned)
     current_ids = get_current_ids(df_cleaned)
     df_output = pd.DataFrame(columns=['video_id', 'title', 'categoryId',
-                            'trending_date', 'view_count'])
+                                      'trending_date', 'view_count'])
     for i in current_ids:
         df_output = df_output.append(prediction_dict[i], ignore_index=True)
     return df_output
