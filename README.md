@@ -34,6 +34,9 @@ The package is organized as follows:
 ├── docs
 │   ├── DesignSpecification.md
 │   ├── FunctionalSpecification.md
+│   ├── InteractionDiagram.png
+│   ├── ProjectTracking.md
+│   ├── ProjectTracking.png
 │   └── Technology\ Reviews.pdf
 ├── examples
 │   ├── trending_category.ipynb
@@ -45,20 +48,9 @@ The package is organized as follows:
 └── utubetp
     ├── US_category_id.csv
     ├── __init__.py
-    ├── __pycache__
-    │   ├── __init__.cpython-38.pyc
-    │   ├── trending_category.cpython-38.pyc
-    │   ├── trending_prediction.cpython-38.pyc
-    │   └── trending_tags.cpython-38.pyc
     ├── scaled_US_youtube_trending_data.csv
     ├── tests
     │   ├── __init__.py
-    │   ├── __pycache__
-    │   │   ├── __init__.cpython-38.pyc
-    │   │   ├── test_category.cpython-38.pyc
-    │   │   ├── test_trending_category.cpython-38.pyc
-    │   │   ├── test_trending_prediction.cpython-38.pyc
-    │   │   └── test_trending_tags.cpython-38.pyc
     │   ├── test_trending_category.py
     │   ├── test_trending_prediction.py
     │   └── test_trending_tags.py
