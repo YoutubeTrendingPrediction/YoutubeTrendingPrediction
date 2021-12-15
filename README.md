@@ -21,43 +21,50 @@ The YouTubeTrendingPrediction(YTP) team aims to offer a tool for Youtubers to ha
 The package is organized as follows:
 
 ```
-YoutubeTrendingPrediction/
-  |- .github/workflows/
-    |- python-package.yml
-  |- data/
-    |- LICENSE
-    |- US_category_id.csv
-    |- US_category_id.jason
-    |- US_youtube_trending_data.csv
-    |- relatedEntities.csv
-    |- relatedQueries.csv
-    |- trending_tags.csv
-  |- docs/
-    |- DesignSpecification.md
-    |- FunctionalSpecification.md
-    |- Technology Reviews.pdf
-  |- examples/
-    |- trending_category.ipynb
-    |- trending_prediction.ipynb
-    |- trending_tags.ipynb
-  |- logo/
-    |- ytp_logo.png
-  |- utubetp/
-    |- pylint_export/
-      |- pylint_result.txt
-    |- tests/
-      |- _init_.py
-      |- test_trending_prediction.py
-    |- _init_.py
-    |- trending_category.py
-    |- trending_prediction.py
-    |- trending_tags.py
-  |- .gitattributes
-  |- gitignore
-  |- LICENSE
-  |- README.md
-  |- requirements.txt
-  |- setup.py
+├── LICENSE
+├── README.md
+├── data
+│   ├── LICENSE
+│   ├── US_category_id.csv
+│   ├── US_category_id.json
+│   ├── US_youtube_trending_data.csv
+│   ├── relatedEntities.csv
+│   ├── relatedQueries.csv
+│   └── trending_tags.csv
+├── docs
+│   ├── DesignSpecification.md
+│   ├── FunctionalSpecification.md
+│   └── Technology\ Reviews.pdf
+├── examples
+│   ├── trending_category.ipynb
+│   ├── trending_prediction.ipynb
+│   └── trending_tags.ipynb
+├── logo
+│   └── ytp_logo.png
+├── requirements.txt
+└── utubetp
+    ├── US_category_id.csv
+    ├── __init__.py
+    ├── __pycache__
+    │   ├── __init__.cpython-38.pyc
+    │   ├── trending_category.cpython-38.pyc
+    │   ├── trending_prediction.cpython-38.pyc
+    │   └── trending_tags.cpython-38.pyc
+    ├── scaled_US_youtube_trending_data.csv
+    ├── tests
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-38.pyc
+    │   │   ├── test_category.cpython-38.pyc
+    │   │   ├── test_trending_category.cpython-38.pyc
+    │   │   ├── test_trending_prediction.cpython-38.pyc
+    │   │   └── test_trending_tags.cpython-38.pyc
+    │   ├── test_trending_category.py
+    │   ├── test_trending_prediction.py
+    │   └── test_trending_tags.py
+    ├── trending_category.py
+    ├── trending_prediction.py
+    └── trending_tags.py
 ```
 
 
