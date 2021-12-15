@@ -19,7 +19,6 @@ def timesplit(df_obj):
     if isinstance(df_obj, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
 
-
     df_obj['date'] = pd.to_datetime(df_obj['trending_date']).dt.date
     df_obj['month'] = pd.to_datetime(df_obj['trending_date']).dt.month
     df_obj['year'] = pd.to_datetime(df_obj['trending_date']).dt.year
@@ -33,11 +32,11 @@ def dataframecombine(dataobject, datacategory):
     Input: Two dataframes that can be combined
     Output: A new combined dataframe
     """
-    if isinstance(dataobject,pd.core.frame.DataFrame)is False:
+    if isinstance (dataobject, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
 
-    dataframea1 = datacategory.rename({'Id':'categoryId'}, axis=1)
-    outcomedata = dataobject.merge(dataframea1,left_on='categoryId', right_on='Id')
+    dataframea1 = datacategory.rename({'Id': 'categoryId'}, axis=1)
+    outcomedata = dataobject.merge(dataframea1, left_on='categoryId', right_on='Id')
     return outcomedata
 
 
@@ -53,11 +52,11 @@ def splitcategory(df1):
     if isinstance(df1, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
 
-    df2 = df1.groupby(['date','Title','month','year']).size()
+    df2 = df1.groupby(['date', 'Title', 'month', 'year']).size()
     df3 = df2.reset_index(name='Amount')
-    df4 = df3.sort_values(by=['date','Amount'])
+    df4 = df3.sort_values(by=['date', 'Amount'])
     df5 = df4.reset_index()
-    df6 = df5.drop(['index'],axis=1)
+    df6 = df5.drop(['index'], axis=1)
     return df6
 
 
@@ -74,7 +73,7 @@ def detailtimesplit(df6):
     monthnumber = df6.month.unique()
     timeset = []
     for i in yearnumber:
-        for j in range(1,13):
+        for j in range(1, 13):
             if i == yearnumber[0] and j >= 1 and j < monthnumber[0]:
                 continue
             elif i == yearnumber[1] and j == 12:
