@@ -17,23 +17,28 @@ class TestCategory(unittest.TestCase):
         """
         The smoke test makes sure that the function runs well
         """
-        df_category = pd.read_csv('./data/US_category_id.csv')
-        df_raw = pd.read_csv('./data/US_youtube_trending_data.csv')
-        newdataframe = timesplit(df_raw)
-        preprocessframe = dataframecombine(newdataframe, df_category)
-        outputframe1 = splitcategory(preprocessframe)
-        detailtimesplit(outputframe1)
-        return
+        # df_category = pd.read_csv('./utubetp/US_category_id.csv')
+        # df_raw = pd.read_csv('./utubetp/US_youtube_trending_data.csv')
+        # newdataframe = timesplit(df_raw)
+        # preprocessframe = dataframecombine(df_category, newdataframe)
+        # outputframe1 = splitcategory(preprocessframe)
+        # detailtimesplit(outputframe1)
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        timesplit(df)
 
     def test_edge(self):
         """
         Edge test with wrong type of data input, to see if the function
         can throw a TypeError
         """
-        df_raw = pd.read_csv('./data/US_category_id.csv')
-        randomdata = [1, 5, 8, 0, 3, 4]
+        df_raw = [1, 2, 3, 4, 5]
         with self.assertRaises(TypeError):
             timesplit(df_raw)
-            dataframecombine(randomdata, df_raw)
-            splitcategory(df_raw)
-            detailtimesplit(df_raw)
+
+        # df_raw = pd.read_csv('./data/US_category_id.csv')
+        # randomdata = [1, 5, 8, 0, 3, 4]
+        # with self.assertRaises(TypeError):
+        #     timesplit(df_raw)
+        #     dataframecombine(randomdata, df_raw)
+        #     splitcategory(df_raw)
+        #     detailtimesplit(df_raw)
