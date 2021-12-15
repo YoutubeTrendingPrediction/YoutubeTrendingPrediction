@@ -4,11 +4,6 @@ This module is for tracking trending tags over time.
 import pandas as pd
 import numpy as np
 
-def read_data():
-    df = pd.read_csv("../data/US_youtube_trending_data.csv")
-    return df
-
-
 def time_fmt(tdf):
     """
     Note
@@ -25,18 +20,17 @@ def time_fmt(tdf):
     """
     # check 1: if variable is dataframe
     if not isinstance(tdf, pd.DataFrame):
-        print("Please input Dataframe")
-        raise TypeError("n_neighbors should be an integer!")
+        # print("Please input Dataframe")
+        raise TypeError("Not dataframe")
     try:
         tdf["trending_date"] = pd.to_datetime(tdf.trending_date)
         tdf["publishedAt"] = pd.to_datetime(tdf.publishedAt)
         return tdf
     except ValueError:
-        print("Error occured when input raw datasets")
-        return
+        raise ValueError("Error occured when input raw datasets")
 
 
-def split_tags():
+def split_tags(tdf):
     """
     Note
     -------
@@ -51,7 +45,6 @@ def split_tags():
     Return a dataframe after spliting every tags
     """
     
-    tdf = read_data()
     try:
         time_fmt_df = time_fmt(tdf)
         tag_slt_df = pd.concat([time_fmt_df["trending_date"], time_fmt_df["tags"]
@@ -61,11 +54,10 @@ def split_tags():
         tag_df.rename(columns={1: "tag_name", 0: "frequency"}, inplace=True)
         return tag_df
     except ValueError:
-        print("Error occured when spliting tags")
-        return
+        raise ValueError("Error occured when spliting tags")
 
 
-def select_year_and_month(tag_df, y_1, y_2, m_1, m_2):
+def select_year_and_month(df, y_1, y_2, m_1, m_2):
     """
     Note
     -------
@@ -88,28 +80,24 @@ def select_year_and_month(tag_df, y_1, y_2, m_1, m_2):
     Return a dataframe with top 20 tags in period of time
     """
     # check 1: if tag_df is dataframe
-    if not isinstance(tag_df, pd.DataFrame):
-        print("Please input Dataframe")
-        return
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError("Please input Dataframe")
     
     # check 2: if variables are integer
     if not isinstance(y_1,int):
-        print("Please input integers")
-        return
+        raise ValueError("Please input integers")
     if not isinstance(y_2,int):
-        print("Please input integers")
-        return
+        raise ValueError("Please input integers")
     if not isinstance(m_1,int):
-        print("Please input integers")
-        return
+        raise ValueError("Please input integers")
     if not isinstance(m_2,int):
-        print("Please input integers")
-        return
+        raise ValueError("Please input integers")
+
+    tdf = time_fmt(df)
+    tag_df = split_tags(tdf)
     tag_y_df = tag_df[tag_df["trending_date"].dt.year.isin(np.arange(y_1, y_2+1))]
     tag_ym_df = tag_y_df[tag_y_df["trending_date"].dt.month.isin(np.arange(m_1, m_2+1))]
     tag_ym_df = tag_ym_df[["tag_name", "frequency"]].groupby(["tag_name"]).count()\
         .sort_values(["frequency"], ascending=False).drop(index="[None]")
     return tag_ym_df.head(20)
-
-
-time_fmt(3)
+    
