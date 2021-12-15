@@ -11,7 +11,7 @@ from utubetp.trending_tags import split_tags
 from utubetp.trending_tags import select_year_and_month
 
 
-class TestKnn(unittest.TestCase):
+class TestTrendingTags(unittest.TestCase):
 
     @classmethod
     def test_smoke(self):
