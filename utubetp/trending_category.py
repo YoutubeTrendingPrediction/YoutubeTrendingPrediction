@@ -5,31 +5,30 @@ the time variation. The time steps can be days and months.
 
 import pandas as pd
 
+df_category = pd.read_csv('./data/US_category_id.csv')
+df = pd.read_csv('./data/US_youtube_trending_data.csv')
 
-df_category=pd.read_csv('./data/US_category_id.csv')
-df=pd.read_csv('./data/US_youtube_trending_data.csv')
 
-
-def timesplit(dfobject):
+def timesplit(df_obj):
     """
     This function is used to extract detailed time information, such
-    as hours, years, and months from time volumn.
+    as hours, years, and months from time column.
     Input: A DataFrame
-    Output: The new dataFrame with added columns in various time steps.
+    Output: The new DataFrame with added columns in various time steps.
     """
-    if isinstance(df,pd.core.frame.DataFrame)is False:
+    if isinstance(df_obj, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
 
 
-    df['date']=pd.to_datetime(df['trending_date']).dt.date
-    df['month']=pd.to_datetime(df['trending_date']).dt.month
-    df['year']=pd.to_datetime(df['trending_date']).dt.year
-    return df
+    df_obj['date'] = pd.to_datetime(df_obj['trending_date']).dt.date
+    df_obj['month'] = pd.to_datetime(df_obj['trending_date']).dt.month
+    df_obj['year'] = pd.to_datetime(df_obj['trending_date']).dt.year
+    return df_obj
 
 
-def dataframecombine(dataobject,datacategory):
+def dataframecombine(dataobject, datacategory):
     """
-    This function is used to combine two different dataframe based on 
+    This function is used to combine two different dataframe based on
     same column value
     Input: Two dataframes that can be combined
     Output: A new combined dataframe
@@ -37,8 +36,8 @@ def dataframecombine(dataobject,datacategory):
     if isinstance(dataobject,pd.core.frame.DataFrame)is False:
         raise TypeError('Input is not a DataFrame!')
 
-    dataframea1=datacategory.rename({'Id':'categoryId'},axis=1)
-    outcomedata=dataobject.merge(dataframea1,left_on='categoryId',right_on='Id')
+    dataframea1 = datacategory.rename({'Id':'categoryId'}, axis=1)
+    outcomedata = dataobject.merge(dataframea1,left_on='categoryId', right_on='Id')
     return outcomedata
 
 
@@ -51,14 +50,14 @@ def splitcategory(df1):
     aomount in chronological order.
     """
 
-    if isinstance(df1, pd.core.frame.DataFrame)is False:
+    if isinstance(df1, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
 
-    df2=df1.groupby(['date','Title','month','year']).size()
-    df3=df2.reset_index(name='Amount')
-    df4=df3.sort_values(by=['date','Amount'])
-    df5=df4.reset_index()
-    df6=df5.drop(['index'],axis=1)
+    df2 = df1.groupby(['date','Title','month','year']).size()
+    df3 = df2.reset_index(name='Amount')
+    df4 = df3.sort_values(by=['date','Amount'])
+    df5 = df4.reset_index()
+    df6 = df5.drop(['index'],axis=1)
     return df6
 
 
@@ -70,17 +69,17 @@ def detailtimesplit(df6):
     """
     if isinstance(df6, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
-    
-    yearnumber=df6.year.unique()
-    monthnumber=df6.month.unique()
-    set=[]
+
+    yearnumber = df6.year.unique()
+    monthnumber = df6.month.unique()
+    timeset = []
     for i in yearnumber:
-         for j in range(1,13):
-             if i==yearnumber[0] and j>=1 and j<monthnumber[0]:
+        for j in range(1,13):
+            if i == yearnumber[0] and j >= 1 and j < monthnumber[0]:
                 continue
-             elif i==yearnumber[1] and j==12:
+            elif i == yearnumber[1] and j == 12:
                 continue
-             else:
-                data=df6[(df6.year==i)&(df6.month==j)]
-                set.append(data)
-    return set
+            else:
+                data = df6[(df6.year == i) & (df6.month == j)]
+                timeset.append(data)
+    return timeset
