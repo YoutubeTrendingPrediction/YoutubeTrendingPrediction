@@ -2,53 +2,59 @@
 Tests for the trending_tags module
 """
 
+from datetime import time
 import unittest
 import numpy as np
-import trending_tags
-
+import pandas as pd
+from utubetp.trending_tags import time_fmt
+from utubetp.trending_tags import split_tags
+from utubetp.trending_tags import select_year_and_month
 
 
 class TestKnn(unittest.TestCase):
 
+    @classmethod
     def test_smoke(self):
         """
         Simple smoke test to make sure function runs.
         """
-        tag_df = trending_tags.split_tags()
-        trending_tags.select_year_and_month(tag_df,2021,2021,10,10)
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        tag_df = select_year_and_month(df, 2021, 2021, 11, 11)
 
-        return
-
+    @classmethod
     def test_one_shot1(self):
         """
-        One shot test.
+        One shot test for testing if split_tags has correct schema.
         """
-        
-        return
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        tdf = time_fmt(df)
+        tag_df = split_tags(tdf)
+        assert list(tag_df.columns) == ['frequency', 'tag_name', 'trending_date', 'tags']
 
     def test_one_shot2(self):
         """
-        One shot test.
+        One shot test for testing if time_fmt has correct schema.
         """
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        tdf = time_fmt(df)
+        assert list(tdf.columns) == ['video_id', 'title', 'publishedAt', 'channelId', 'channelTitle',
+                                     'categoryId', 'trending_date', 'tags', 'view_count', 'likes',
+                                     'dislikes', 'comment_count', 'thumbnail_link', 'comments_disabled',
+                                     'ratings_disabled', 'description']
         
-        return
+    def test_edge_timefmt_not_df(self):
+        """
+        Edge test with wrong type of data input, to see the function can throw a TypeError.
+        """
+        df_raw = [1, 2, 3, 4, 5]
+        with self.assertRaises(TypeError):
+            time_fmt(df_raw)
 
-    def test_one_shot3(self):
+    def test_edge_select_year_and_month_is_not_integer(self):
         """
-        One shot test3. 
+        Edge test with wrong type of data input, to see the function can throw a TypeError.
         """
-        
-        return
-
-    def test_edge_n_out_of_range(self):
-        """
-        Edge test to make sure the function throws a ValueError
-        """
-        
-        return
-
-    def test_edge_input_is_not_number(self):
-        """
-        Edge test to make sure the function throws a ValueError
-        """
-        return
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        input = [df, '2021', '2021', '11', '11']
+        with self.assertRaises(TypeError):
+            time_fmt(input)
