@@ -11,7 +11,6 @@ from utubetp.trending_category import detailtimesplit
 
 
 class TestCategory(unittest.TestCase):
-
     def test_smoke(self):
      """
      The smoke test makes sure that the function runs well
@@ -23,7 +22,6 @@ class TestCategory(unittest.TestCase):
      outputframe1=splitcategory(preprocessframe)
      outputframe2=detailtimesplit(outputframe1)
      return
-  
 
     def test_edge(self):
     """
