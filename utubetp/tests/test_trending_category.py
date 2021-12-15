@@ -32,4 +32,3 @@ class TestCategory(unittest.TestCase):
         df_raw = [1, 2, 3, 4, 5]
         with self.assertRaises(TypeError):
             timesplit(df_raw)
-

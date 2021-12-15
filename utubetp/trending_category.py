@@ -32,7 +32,7 @@ def dataframecombine(dataobject, datacategory):
     Input: Two dataframes that can be combined
     Output: A new combined dataframe
     """
-    if isinstance (dataobject, pd.core.frame.DataFrame) is False:
+    if isinstance(dataobject, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
 
     dataframea1 = datacategory.rename({'Id': 'categoryId'}, axis=1)
