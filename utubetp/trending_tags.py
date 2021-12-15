@@ -4,6 +4,7 @@ This module is for tracking trending tags over time.
 import pandas as pd
 import numpy as np
 
+
 def time_fmt(tdf):
     """
     Note
@@ -44,11 +45,11 @@ def split_tags(tdf):
     -------
     Return a dataframe after spliting every tags
     """
-    
+
     try:
         time_fmt_df = time_fmt(tdf)
         tag_slt_df = pd.concat([time_fmt_df["trending_date"], time_fmt_df["tags"]
-                            .str.split(pat='|', expand=False)], axis=1)
+                               .str.split(pat='|', expand=False)], axis=1)
         tag_df = pd.DataFrame([[x] + [z] for x, y in zip(tag_slt_df.index, tag_slt_df.tags) for z in y])
         tag_df = tag_df.merge(tag_slt_df, left_on=0, right_index=True)
         tag_df.rename(columns={1: "tag_name", 0: "frequency"}, inplace=True)
@@ -82,15 +83,15 @@ def select_year_and_month(df, y_1, y_2, m_1, m_2):
     # check 1: if tag_df is dataframe
     if not isinstance(df, pd.DataFrame):
         raise ValueError("Please input Dataframe")
-    
+
     # check 2: if variables are integer
-    if not isinstance(y_1,int):
+    if not isinstance(y_1, int):
         raise ValueError("Please input integers")
-    if not isinstance(y_2,int):
+    if not isinstance(y_2, int):
         raise ValueError("Please input integers")
-    if not isinstance(m_1,int):
+    if not isinstance(m_1, int):
         raise ValueError("Please input integers")
-    if not isinstance(m_2,int):
+    if not isinstance(m_2, int):
         raise ValueError("Please input integers")
 
     tdf = time_fmt(df)
@@ -100,4 +101,4 @@ def select_year_and_month(df, y_1, y_2, m_1, m_2):
     tag_ym_df = tag_ym_df[["tag_name", "frequency"]].groupby(["tag_name"]).count()\
         .sort_values(["frequency"], ascending=False).drop(index="[None]")
     return tag_ym_df.head(20)
-    
+
