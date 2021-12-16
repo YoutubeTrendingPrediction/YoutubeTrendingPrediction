@@ -5,9 +5,6 @@ Tests for the trending category module
 import unittest
 import pandas as pd
 from utubetp.trending_category import timesplit
-from utubetp.trending_category import dataframecombine
-from utubetp.trending_category import splitcategory
-from utubetp.trending_category import detailtimesplit
 
 
 class TestCategory(unittest.TestCase):
