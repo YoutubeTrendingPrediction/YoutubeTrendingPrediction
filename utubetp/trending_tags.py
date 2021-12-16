@@ -99,6 +99,5 @@ def select_year_and_month(df, y_1, y_2, m_1, m_2):
     tag_y_df = tag_df[tag_df["trending_date"].dt.year.isin(np.arange(y_1, y_2+1))]
     tag_ym_df = tag_y_df[tag_y_df["trending_date"].dt.month.isin(np.arange(m_1, m_2+1))]
     tag_ym_df = tag_ym_df[["tag_name", "frequency"]].groupby(["tag_name"]).count()\
-        .sort_values(["frequency"], ascending=False).drop(index="[None]")
+        .sort_values(["frequency"], ascending=False)
     return tag_ym_df.head(20)
-

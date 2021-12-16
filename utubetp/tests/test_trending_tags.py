@@ -2,9 +2,7 @@
 Tests for the trending_tags module
 """
 
-from datetime import time
 import unittest
-import numpy as np
 import pandas as pd
 from utubetp.trending_tags import time_fmt
 from utubetp.trending_tags import split_tags
@@ -19,7 +17,8 @@ class TestTrendingTags(unittest.TestCase):
         Simple smoke test to make sure function runs.
         """
         df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv", index_col=0)
-        tag_df = select_year_and_month(df, 2021, 2021, 11, 11)
+        tag_df = select_year_and_month(df, 2020, 2020, 9, 9)
+        return tag_df
 
     @classmethod
     def test_one_shot1(self):
