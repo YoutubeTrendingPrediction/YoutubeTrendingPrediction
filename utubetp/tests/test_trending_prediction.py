@@ -20,7 +20,7 @@ class TestTrendingPred(unittest.TestCase):
     @classmethod
     def test_smoke(cls):
         """Smoke test to ensure the function running."""
-        df_raw = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv')
+        df_raw = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv', index_col=0)
         df_cleaned = df_cleaning(df_raw)
         get_video_ids(df_cleaned)
         output_video_dict(df_cleaned)
@@ -33,7 +33,7 @@ class TestTrendingPred(unittest.TestCase):
     @classmethod
     def test_one_shot(cls):
         """One shot test to make sure the cleaned DataFrame has the correct schema"""
-        df_raw = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv')
+        df_raw = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv', index_col=0)
         df_cleaned = df_cleaning(df_raw)
         assert list(df_cleaned.columns) == ['video_id', 'title', 'categoryId',
                                             'trending_date', 'view_count']
@@ -50,7 +50,7 @@ class TestTrendingPred(unittest.TestCase):
         """
         Edge test with input of the original DataFrame, to see the function can throw a ValueError.
         """
-        df_raw = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv')
+        df_raw = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv', index_col=0)
         df_cleaned = df_raw
         with self.assertRaises(ValueError):
             get_video_ids(df_cleaned)

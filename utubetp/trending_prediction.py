@@ -6,7 +6,7 @@ and trending tendency of the current trending videos.
 import pandas as pd
 from scipy import interpolate
 
-df = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv')
+df = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv', index_col=0)
 
 
 def df_cleaning(df_raw):
@@ -29,8 +29,8 @@ def df_cleaning(df_raw):
         raise TypeError('Input is not a DataFrame!')
 
     df_cleaned = df_raw.drop(columns=['channelId', 'channelTitle', 'tags', 'thumbnail_link',
-                                      'comments_disabled', 'ratings_disabled', 'description',
-                                      'publishedAt', 'likes', 'dislikes', 'comment_count'], axis=1)
+                                      'comments_disabled', 'ratings_disabled', 'publishedAt',
+                                      'likes', 'dislikes', 'comment_count'], axis=1)
     df_cleaned = df_cleaned[df_cleaned['view_count'] > 0]
     df_cleaned['trending_date'] = pd.to_datetime(df_cleaned.trending_date)
     df_cleaned = df_cleaned.groupby(['video_id']).filter(lambda x: len(x) > 4)

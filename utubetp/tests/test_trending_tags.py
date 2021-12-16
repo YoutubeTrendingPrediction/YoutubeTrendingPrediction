@@ -18,7 +18,7 @@ class TestTrendingTags(unittest.TestCase):
         """
         Simple smoke test to make sure function runs.
         """
-        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv", index_col=0)
         tag_df = select_year_and_month(df, 2021, 2021, 11, 11)
 
     @classmethod
@@ -26,7 +26,7 @@ class TestTrendingTags(unittest.TestCase):
         """
         One shot test for testing if split_tags has correct schema.
         """
-        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv", index_col=0)
         tdf = time_fmt(df)
         tag_df = split_tags(tdf)
         assert list(tag_df.columns) == ['frequency', 'tag_name', 'trending_date', 'tags']
@@ -35,12 +35,12 @@ class TestTrendingTags(unittest.TestCase):
         """
         One shot test for testing if time_fmt has correct schema.
         """
-        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv")
+        df = pd.read_csv("./utubetp/scaled_US_youtube_trending_data.csv", index_col=0)
         tdf = time_fmt(df)
         assert list(tdf.columns) == ['video_id', 'title', 'publishedAt', 'channelId', 'channelTitle',
                                      'categoryId', 'trending_date', 'tags', 'view_count', 'likes',
                                      'dislikes', 'comment_count', 'thumbnail_link', 'comments_disabled',
-                                     'ratings_disabled', 'description']
+                                     'ratings_disabled']
 
     def test_edge_timefmt_not_df(self):
         """
