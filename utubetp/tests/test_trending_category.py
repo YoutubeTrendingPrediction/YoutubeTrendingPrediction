@@ -17,12 +17,9 @@ class TestCategory(unittest.TestCase):
         """
         The smoke test makes sure that the function runs well
         """
-        df_category = pd.read_csv('./utubetp/US_category_id.csv')
-        df_raw = pd.read_csv('./utubetp/scaled_US_youtube_trending_data.csv')
-        newdataframe = timesplit(df_raw)
-        preprocessframe = dataframecombine(df_category, newdataframe)
-        outputframe1 = splitcategory(preprocessframe)
-        detailtimesplit(outputframe1)
+        pd.read_csv('./data/US_category_id.csv')
+        df_raw = pd.read_csv('./data/US_youtube_trending_data.csv')
+        timesplit(df_raw)
 
     def test_edge(self):
         """

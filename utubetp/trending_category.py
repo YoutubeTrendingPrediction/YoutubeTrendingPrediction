@@ -35,8 +35,8 @@ def dataframecombine(dataobject, datacategory):
     if isinstance(dataobject, pd.core.frame.DataFrame) is False:
         raise TypeError('Input is not a DataFrame!')
 
-    dataframea1 = datacategory.rename({'Id': 'categoryId'}, axis=1)
-    outcomedata = dataobject.merge(dataframea1, left_on='categoryId', right_on='Id')
+    df_obj = timesplit(dataobject)
+    outcomedata = df_obj.merge(datacategory, left_on='categoryId', right_on='Id')
     return outcomedata
 
 
